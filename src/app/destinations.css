@@ -1,0 +1,254 @@
+/* ================================================================
+   DESTINATIONS PAGE STYLES & ANIMATIONS
+   Region cards, subregion items, and premium section styling
+   ================================================================ */
+
+/* ══════════════════════════════════════════════════════════════
+   SEARCH FILTERS (Matching Jobs Page)
+   ════════════════════════════════════════════════════════════ */
+
+.destinations-filters {
+  padding: 2.5rem 0 3rem;
+  border-bottom: 1px solid rgba(34, 201, 154, 0.15);
+  margin-bottom: 0;
+  animation: slideUp 0.6s ease-out 0.45s both;
+}
+
+.destinations-filter-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.destinations-filter-context {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(34, 201, 154, 0.04);
+  border-radius: 8px;
+  border: 1px solid rgba(34, 201, 154, 0.15);
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.destinations-filter-context-flag {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.destinations-filter-context-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #17a697;
+  line-height: 1.2;
+}
+
+.destinations-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 240px;
+}
+
+.destinations-filter-group.destinations-filter-wide {
+  flex: 2;
+  min-width: 300px;
+}
+
+.destinations-filter-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.destinations-filter-input,
+.destinations-filter-select {
+  padding: 0.875rem 1rem;
+  border: 1px solid rgba(34, 201, 154, 0.15);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background: #ffffff;
+  color: #4a4a4a;
+  transition: all 0.2s ease-out;
+  height: 44px;
+  line-height: 1.5;
+}
+
+.destinations-filter-input::placeholder {
+  color: #7a8898;
+}
+
+.destinations-filter-input:focus,
+.destinations-filter-select:focus {
+  outline: none;
+  border-color: #17a697;
+  box-shadow: 0 0 0 3px rgba(23, 166, 151, 0.1);
+  background: #ffffff;
+}
+
+.destinations-filter-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234a4a4a' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.destinations-search-btn {
+  height: 44px;
+  padding: 0 2rem;
+  white-space: nowrap;
+  margin-top: 1.25rem;
+  background: #17a697 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.destinations-search-btn:hover {
+  background: #15927f !important;
+  box-shadow: 0 6px 20px rgba(23, 166, 151, 0.3);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   REGION CARDS ANIMATIONS
+   ════════════════════════════════════════════════════════════ */
+
+.destination-region-card {
+  animation: scaleUp 0.5s ease-out both;
+}
+
+.destination-region-card:nth-child(1) { animation-delay: 0.3s; }
+.destination-region-card:nth-child(2) { animation-delay: 0.35s; }
+.destination-region-card:nth-child(3) { animation-delay: 0.4s; }
+.destination-region-card:nth-child(4) { animation-delay: 0.45s; }
+.destination-region-card:nth-child(n+5) { animation-delay: 0.5s; }
+
+/* ══════════════════════════════════════════════════════════════
+   SUBREGION ITEMS ANIMATIONS
+   ════════════════════════════════════════════════════════════ */
+
+.destination-subregion-item {
+  animation: slideUp 0.4s ease-out both;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.destination-subregion-item:nth-child(1) { animation-delay: 0.5s; }
+.destination-subregion-item:nth-child(2) { animation-delay: 0.55s; }
+.destination-subregion-item:nth-child(3) { animation-delay: 0.6s; }
+.destination-subregion-item:nth-child(4) { animation-delay: 0.65s; }
+.destination-subregion-item:nth-child(5) { animation-delay: 0.7s; }
+.destination-subregion-item:nth-child(n+6) { animation-delay: 0.75s; }
+
+.destination-subregion-item:hover {
+  animation: bounce 0.6s ease-in-out;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HERO SECTION ANIMATIONS
+   ════════════════════════════════════════════════════════════ */
+
+.destination-hero-section {
+  animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+.destination-hero-content {
+  animation: slideUp 0.6s ease-out 0.4s both;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PREMIUM SECTIONS ANIMATIONS
+   ════════════════════════════════════════════════════════════ */
+
+.destination-premium-section {
+  animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.destination-premium-card {
+  animation: slideUp 0.5s ease-out 0.6s both;
+}
+
+.destination-premium-card:nth-child(1) { animation-delay: 0.6s; }
+.destination-premium-card:nth-child(2) { animation-delay: 0.65s; }
+.destination-premium-card:nth-child(3) { animation-delay: 0.7s; }
+.destination-premium-card:nth-child(n+4) { animation-delay: 0.75s; }
+
+/* ══════════════════════════════════════════════════════════════
+   GLOBAL ANIMATION KEYFRAMES
+   ════════════════════════════════════════════════════════════ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE ANIMATIONS
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .destination-region-card {
+    animation: slideUp 0.4s ease-out both;
+  }
+
+  .destination-region-card:nth-child(1) { animation-delay: 0.3s; }
+  .destination-region-card:nth-child(2) { animation-delay: 0.35s; }
+  .destination-region-card:nth-child(3) { animation-delay: 0.4s; }
+  .destination-region-card:nth-child(n+4) { animation-delay: 0.45s; }
+}
+
+@media (max-width: 480px) {
+  .destination-region-card {
+    animation: scaleUp 0.3s ease-out both;
+  }
+
+  .destination-subregion-item {
+    animation: slideUp 0.3s ease-out both;
+  }
+}

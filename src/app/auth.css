@@ -1,0 +1,235 @@
+/* ================================================================
+   AUTH PAGES STYLES (Sign In, Sign Up)
+   Clerk authentication pages with site design integration
+   ================================================================ */
+
+/* ─── IFRAME CONTAINER (for Clerk cross-origin iframe) ─── */
+iframe {
+  border: none !important;
+  background: transparent !important;
+}
+
+.cl-rootBox {
+  width: 100% !important;
+  max-width: 480px !important;
+  margin: 0 auto !important;
+}
+
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(212, 239, 245, 0.4) 0%, rgba(212, 239, 245, 0.2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg) 0;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 480px;
+  padding: 0 var(--space-lg);
+}
+
+/* ─── AUTH HEADER ─── */
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.auth-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--text-strong);
+}
+
+.auth-header p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ─── CLERK FORM WRAPPER ─── */
+.auth-form-wrapper {
+  width: 100% !important;
+}
+
+.auth-card {
+  background: white !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(34, 201, 154, 0.1) !important;
+  padding: var(--space-2xl) !important;
+}
+
+/* ─── CLERK FORM STYLING (Soft Shadow + Micro-interactions) ─── */
+.cl-formButtonPrimary {
+  background: linear-gradient(135deg, #17a697 0%, #0f766e 100%) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 0.85rem 1.5rem !important;
+  border-radius: 8px !important;
+  transition: all var(--transition-base) !important;
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.15) !important;
+  border: none !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #0d5c5c 100%) !important;
+  box-shadow: 0 8px 20px rgba(34, 201, 154, 0.25) !important;
+  transform: translateY(-2px) !important;
+}
+
+.cl-formButtonPrimary:active {
+  transform: scale(0.98) !important;
+  box-shadow: 0 2px 8px rgba(34, 201, 154, 0.15) !important;
+}
+
+.cl-formButtonSecondary {
+  background: white !important;
+  border: 1.5px solid rgba(34, 201, 154, 0.2) !important;
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px !important;
+  transition: all var(--transition-base) !important;
+  box-shadow: 0 2px 6px rgba(34, 201, 154, 0.08) !important;
+}
+
+.cl-formButtonSecondary:hover {
+  background: rgba(34, 201, 154, 0.08) !important;
+  border-color: var(--primary-teal) !important;
+  color: var(--primary-teal-dark) !important;
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.15) !important;
+  transform: translateY(-2px) !important;
+}
+
+.cl-formButtonSecondary:active {
+  transform: scale(0.98) !important;
+  box-shadow: 0 2px 6px rgba(34, 201, 154, 0.1) !important;
+}
+
+/* ─── OAUTH BUTTONS (Google, Apple, TikTok) ─── */
+.cl-socialButtonsBlockButton {
+  border: 1.5px solid rgba(34, 201, 154, 0.15) !important;
+  background: white !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1rem !important;
+  transition: all var(--transition-base) !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+}
+
+.cl-socialButtonsBlockButton:hover {
+  background: rgba(34, 201, 154, 0.08) !important;
+  border-color: var(--primary-teal) !important;
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.12) !important;
+  transform: translateY(-2px) !important;
+}
+
+.cl-socialButtonsBlockButton:active {
+  transform: scale(0.98) !important;
+  box-shadow: 0 2px 6px rgba(34, 201, 154, 0.08) !important;
+}
+
+.cl-socialButtonsBlockButton svg {
+  margin-right: 0.5rem !important;
+}
+
+/* ─── FORM INPUTS ─── */
+.cl-input,
+.cl-inputGroup input {
+  border: 1.5px solid rgba(34, 201, 154, 0.2) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  transition: all var(--transition-base) !important;
+}
+
+.cl-input:focus,
+.cl-inputGroup input:focus {
+  outline: none !important;
+  border-color: var(--primary-teal) !important;
+  background: rgba(34, 201, 154, 0.02) !important;
+  box-shadow: 0 0 0 3px rgba(34, 201, 154, 0.1) !important;
+}
+
+/* ─── FORM LABELS ─── */
+.cl-label {
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: var(--text-strong) !important;
+}
+
+/* ─── DIVIDER ─── */
+.cl-divider {
+  background: rgba(34, 201, 154, 0.1) !important;
+}
+
+.cl-dividerText {
+  color: var(--text-muted) !important;
+  font-size: 0.9rem !important;
+}
+
+/* ─── SIGN UP LINK ─── */
+.cl-footerAction {
+  color: var(--text-primary) !important;
+  font-size: 0.95rem !important;
+}
+
+.cl-footerAction a {
+  color: var(--primary-teal-dark) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: color var(--transition-base) !important;
+}
+
+.cl-footerAction a:hover {
+  color: var(--primary-teal) !important;
+  text-decoration: underline !important;
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 768px) {
+  .auth-page {
+    padding: var(--space-md) 0;
+  }
+
+  .auth-container {
+    padding: 0 var(--space-md);
+  }
+
+  .auth-card {
+    padding: var(--space-xl) !important;
+  }
+
+  .auth-header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 0 var(--space-md);
+  }
+
+  .auth-card {
+    padding: var(--space-lg) !important;
+  }
+
+  .auth-header h1 {
+    font-size: 1.35rem;
+  }
+
+  .auth-header p {
+    font-size: 0.9rem;
+  }
+
+  .cl-formButtonPrimary,
+  .cl-formButtonSecondary,
+  .cl-socialButtonsBlockButton {
+    font-size: 0.95rem !important;
+    padding: 0.65rem 1.25rem !important;
+  }
+}

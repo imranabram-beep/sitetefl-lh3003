@@ -1,0 +1,80 @@
+═══════════════════════════════════════════════════════════════════════════════
+WORKNET API EMAIL (South Korea) - READY TO SEND
+═══════════════════════════════════════════════════════════════════════════════
+
+STATUS: API Documentation Found! ✅
+
+API Page: https://www.work24.go.kr/cm/e/a/0110/selectOpenApiSvcInfo.do
+Request URL: https://www.work24.go.kr/cm/openApi/call/wk/callOpenApiSvcInfo210L01.do
+
+NEXT STEP: Find the contact/support email on WorkNet website and send this email:
+
+───────────────────────────────────────────────────────────────────────────────
+
+TO: [Find on https://www.work24.go.kr/ - look for API/Support/Contact]
+SUBJECT: Open API Authentication Key Request - TEFL Teaching Jobs Platform
+
+---
+
+Hello WorkNet Team,
+
+I am writing to request an API authentication key (authKey) for our job search
+platform, siteTeFL (https://siteTeFL.com).
+
+We have reviewed your API documentation at:
+https://www.work24.go.kr/cm/e/a/0110/selectOpenApiSvcInfo.do
+
+API Details Found:
+- Request URL: https://www.work24.go.kr/cm/openApi/call/wk/callOpenApiSvcInfo210L01.do
+- Required Parameter: authKey
+- Return Type: XML
+- Purpose: Job search and retrieval
+
+Project Overview:
+siteTeFL is a dedicated platform connecting TEFL (Teaching English as a Foreign
+Language) professionals with teaching job opportunities across Asia. We are
+building a comprehensive job aggregation service that brings together verified
+teaching positions from government job boards across multiple Asian nations.
+
+API Integration Request:
+We would like to integrate the WorkNet Job Information API into our platform to
+include teaching and English-language job opportunities available in South Korea.
+This will allow English language teachers to discover positions on WorkNet
+through our application.
+
+Requirements:
+We need:
+1. API authentication key (authKey)
+2. Any terms of service or usage restrictions
+3. Rate limits and usage guidelines
+4. Technical support contact for integration assistance
+
+Platform Details:
+- Website: siteTeFL.com
+- Focus: TEFL teaching jobs in Asia
+- Target Users: English language teachers and education professionals
+- Intended Use: Job aggregation and search platform for English teaching positions
+
+We are committed to proper implementation and compliance with all WorkNet
+guidelines and terms of service.
+
+Thank you for considering this integration request. We look forward to connecting
+English language teachers with opportunities in South Korea through your API.
+
+Best regards,
+Imran Patel
+Founder, siteTeFL
+imran.abram@gmail.com
+siteTeFL.com
+
+───────────────────────────────────────────────────────────────────────────────
+
+HOW TO FIND THE EMAIL:
+1. Visit https://www.work.go.kr/
+2. Look for: "API", "Contact Us", "Support", "개발자" (Developer in Korean)
+3. Try common addresses like: api@work.go.kr, support@work.go.kr
+4. Or use their contact form to request API access
+
+Once you find and send this email, they should provide you with an authKey!
+
+═══════════════════════════════════════════════════════════════════════════════

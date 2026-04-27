@@ -1,0 +1,1082 @@
+/* ================================================================
+   HOMEPAGE SECTIONS
+   Styles for homepage layout, destination strips, stats, and CTAs
+   ================================================================ */
+
+/* ─── STATS BAR ─── */
+.hp-stats-bar {
+  padding: var(--space-lg) 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 20%, transparent 80%, rgba(255,255,255,0.5) 100%);
+  border-top: 1px solid rgba(34, 201, 154, 0.1);
+  border-bottom: 1px solid rgba(34, 201, 154, 0.1);
+  animation: slideDown 0.6s ease-out 0.3s both;
+}
+
+.hp-stats-inner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+.hp-stat-item-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+  flex: 1;
+}
+
+.hp-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.hp-stat-item strong {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary-gold);
+  line-height: 1.2;
+}
+
+.hp-stat-item span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.hp-stat-div {
+  width: 1px;
+  height: 40px;
+  background: rgba(34, 201, 154, 0.1);
+}
+
+/* ─── DESTINATION STRIP ─── */
+.hp-dest-strip {
+  padding: var(--space-xl) 0 var(--space-2xl) 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 20%, transparent 80%, rgba(255,255,255,0.5) 100%);
+}
+
+.hp-dest-strip-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary-teal-dark);
+  margin: 0 0 var(--space-lg) 0;
+  text-align: center;
+  display: block;
+}
+
+.hp-dest-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.hp-dest-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  width: 160px;
+  height: 100px;
+  background: white;
+  border: 2px solid rgba(34, 201, 154, 0.2);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  text-align: center;
+  animation: scaleUp 0.5s ease-out both;
+}
+
+.hp-dest-chip:nth-child(1) { animation-delay: 0.4s; }
+.hp-dest-chip:nth-child(2) { animation-delay: 0.45s; }
+.hp-dest-chip:nth-child(3) { animation-delay: 0.5s; }
+.hp-dest-chip:nth-child(4) { animation-delay: 0.55s; }
+.hp-dest-chip:nth-child(5) { animation-delay: 0.6s; }
+.hp-dest-chip:nth-child(n+6) { animation-delay: 0.65s; }
+
+.hp-dest-chip:hover {
+  border-color: var(--primary-teal);
+  background: linear-gradient(135deg, rgba(34, 201, 154, 0.08) 0%, rgba(34, 201, 154, 0.04) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(34, 201, 154, 0.12);
+}
+
+.hp-chip-flag {
+  font-size: 1.6rem;
+  line-height: 1;
+  display: block;
+}
+
+.hp-chip-name {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  white-space: nowrap;
+}
+
+.hp-chip-sal {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+/* ─── ASIA BANNER SECTION ─── */
+.hp-asia-banner {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(135deg, rgba(34, 201, 154, 0.05) 0%, rgba(34, 201, 154, 0.02) 100%);
+}
+
+.hp-asia-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.hp-asia-text h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.033em;
+  color: var(--text-strong);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.hp-asia-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.hp-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary-teal-dark);
+  margin: 0 0 var(--space-md) 0;
+}
+
+.hp-eyebrow-teal {
+  color: var(--primary-teal);
+}
+
+/* Gold button styling is now in button.css with soft shadows + micro-interactions */
+
+.hp-asia-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.hp-asia-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hp-asia-stat strong {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--secondary-gold);
+  line-height: 1.2;
+}
+
+.hp-asia-stat span {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ─── DESTINATION CARDS ─── */
+.hp-dest-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.hp-dest-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-base);
+  min-height: 350px;
+}
+
+.hp-dest-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.hp-dest-card-img-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hp-dest-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-base);
+}
+
+.hp-dest-card:hover .hp-dest-card-img {
+  transform: scale(1.05);
+}
+
+.hp-dest-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(15, 47, 47, 0.6) 100%);
+}
+
+.hp-dest-card-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.hp-dest-flag {
+  font-size: 2rem;
+}
+
+.hp-dest-landmark {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: right;
+  flex: 1;
+  padding-left: var(--space-md);
+}
+
+.hp-dest-card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-lg);
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 2;
+  color: white;
+}
+
+.hp-dest-card-body h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.hp-dest-salary {
+  font-size: 0.9rem;
+  color: var(--secondary-gold);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.hp-dest-card-body p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── CLASSROOM SCENES ─── */
+.hp-scenes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.hp-scene-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  min-height: 280px;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.hp-scene-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.hp-scene-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-base);
+}
+
+.hp-scene-card:hover .hp-scene-img {
+  transform: scale(1.08);
+}
+
+.hp-scene-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.hp-scene-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-lg);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 2;
+}
+
+/* ─── STEPS GRID ─── */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  background: var(--surface-white);
+  border: 1px solid rgba(34, 201, 154, 0.1);
+  border-radius: var(--radius);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.step-card:hover {
+  border-color: var(--primary-teal);
+  box-shadow: 0 8px 24px rgba(34, 201, 154, 0.1);
+  transform: translateY(-4px);
+}
+
+.step-num {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--secondary-gold);
+  line-height: 1;
+}
+
+.step-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  margin: 0;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── CTA STRIP ─── */
+.hp-cta-strip {
+  padding: var(--space-2xl) 0;
+  background: var(--surface-white);
+  border-top: 1px solid rgba(34, 201, 154, 0.08);
+  border-bottom: 1px solid rgba(34, 201, 154, 0.08);
+}
+
+.hp-cta-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+.hp-cta-inner > div:first-child h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.033em;
+  color: var(--text-strong);
+  margin: 0 0 var(--space-md) 0;
+}
+
+.hp-cta-inner > div:first-child p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.cta-reassurance {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.cta-reassurance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.cta-reassurance-pill svg {
+  flex-shrink: 0;
+}
+
+.hp-cta-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Button styling is now centralized in button.css with soft shadows + micro-interactions */
+
+.cta-trust-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: var(--space-md);
+}
+
+/* ─── COURSE CARDS GRID ─── */
+.course-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: -1.5rem;
+}
+
+.prem-card {
+  display: flex;
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  background: var(--surface-white);
+  border: 2px solid rgba(34, 201, 154, 0.2);
+}
+
+.prem-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(34, 201, 154, 0.15);
+}
+
+.prem-card--featured {
+  border-color: var(--primary-teal);
+  box-shadow: 0 8px 24px rgba(34, 201, 154, 0.12);
+}
+
+.prem-card-popular {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  padding: 0.4rem 0.75rem;
+  background: var(--secondary-gold);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-xs);
+  z-index: 10;
+}
+
+.prem-card-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.prem-card-header {
+  position: relative;
+  padding: 1rem 1.25rem;
+  overflow: hidden;
+}
+
+.prem-card-header--teal {
+  background: linear-gradient(135deg, rgba(34, 201, 154, 0.12) 0%, rgba(34, 201, 154, 0.06) 100%);
+  border-bottom: 1px solid rgba(34, 201, 154, 0.15);
+}
+
+.prem-card-header--navy {
+  background: linear-gradient(135deg, rgba(15, 47, 47, 0.12) 0%, rgba(15, 47, 47, 0.06) 100%);
+  border-bottom: 1px solid rgba(15, 47, 47, 0.15);
+}
+
+.prem-card-header--gold {
+  background: linear-gradient(135deg, rgba(253, 144, 0, 0.12) 0%, rgba(253, 144, 0, 0.06) 100%);
+  border-bottom: 1px solid rgba(253, 144, 0, 0.15);
+}
+
+.prem-card-glow {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(34, 201, 154, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.prem-card-ghost {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(34, 201, 154, 0.05);
+  opacity: 0.5;
+}
+
+.prem-card-level {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary-teal-dark);
+  background: rgba(34, 201, 154, 0.1);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.prem-card-duration {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.prem-card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+  min-height: 0;
+}
+
+/* Compact homepage course cards */
+.hp-cta-inner .prem-card-body {
+  padding: 0.85rem;
+  gap: 0.6rem;
+}
+
+.prem-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.prem-card-footer {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(34, 201, 154, 0.1);
+}
+
+.hp-cta-inner .prem-card-footer {
+  gap: 0.6rem;
+  padding-top: 0.85rem;
+}
+
+.prem-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  margin: 0;
+  line-height: 1.15;
+}
+
+.hp-cta-inner .prem-card-title {
+  font-size: 1rem;
+}
+
+.prem-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.hp-cta-inner .prem-card-desc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.prem-card-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hp-cta-inner .prem-card-benefits {
+  gap: 0.5rem;
+}
+
+.prem-card-benefits li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.hp-cta-inner .prem-card-benefits li {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.prem-card-check {
+  flex-shrink: 0;
+  color: var(--primary-teal);
+  font-weight: 600;
+}
+
+.prem-card-divider {
+  height: 1px;
+  background: rgba(34, 201, 154, 0.1);
+  margin: 0.6rem 0;
+}
+
+.hp-cta-inner .prem-card-divider {
+  margin: 0.5rem 0;
+}
+
+.prem-card-price-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  justify-content: center;
+  height: 2.2rem;
+}
+
+.prem-card-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary-gold);
+  line-height: 1.2;
+}
+
+.prem-card-price-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.prem-card-installment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  min-height: 1.4em;
+}
+
+.prem-card-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+  width: 100%;
+  text-align: center;
+  min-height: 44px;
+  line-height: 1.4;
+}
+
+.hp-cta-inner .prem-card-cta {
+  padding: 0.8rem 1.25rem;
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+.prem-card-cta--teal {
+  background: linear-gradient(135deg, #17a697 0%, #0f766e 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.2);
+}
+
+.prem-card-cta--teal:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #0d5c5c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 201, 154, 0.3);
+}
+
+.prem-card-cta--navy {
+  background: rgba(15, 47, 47, 0.8);
+  color: white;
+  box-shadow: 0 4px 12px rgba(15, 47, 47, 0.2);
+}
+
+.prem-card-cta--navy:hover {
+  background: rgba(15, 47, 47, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 47, 47, 0.3);
+}
+
+.prem-card-cta--gold {
+  background: var(--secondary-gold-muted);
+  color: white;
+  box-shadow: 0 4px 12px rgba(212, 150, 77, 0.2);
+}
+
+.prem-card-cta--gold:hover {
+  background: var(--secondary-gold-muted-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 150, 77, 0.3);
+}
+
+.prem-card-outcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  height: 1.3rem;
+}
+
+.prem-card-outcome strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ─── SECTION HEADING ─── */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-2xl);
+}
+
+/* ─── COMPACT CARD VERSION (for homepage) ─── */
+.prem-card--compact {
+  max-height: none;
+}
+
+.prem-card--compact .prem-card-body {
+  padding: 0.8rem 0.8rem 0 0.8rem;
+  gap: 0.5rem;
+}
+
+.prem-card--compact .prem-card-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.prem-card--compact .prem-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.prem-card--compact .prem-card-benefits {
+  display: none;
+}
+
+.prem-card--compact .prem-card-divider {
+  display: none;
+}
+
+.prem-card--compact .prem-card-footer {
+  padding-top: 0.7rem;
+  gap: 0.5rem;
+}
+
+.prem-card--compact .prem-card-price-row {
+  height: 1.8rem;
+}
+
+.prem-card--compact .prem-card-price {
+  font-size: 1.3rem;
+}
+
+.prem-card--compact .prem-card-price-sub {
+  font-size: 0.65rem;
+}
+
+.prem-card--compact .prem-card-installment {
+  font-size: 0.75rem;
+  min-height: auto;
+}
+
+.prem-card--compact .prem-card-outcome {
+  height: auto;
+  font-size: 0.75rem;
+}
+
+.prem-card--compact .prem-card-cta {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  min-height: 38px;
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 1024px) {
+  .hp-asia-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .hp-asia-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hp-cta-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .hp-dest-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hp-scenes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hp-stats-inner {
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .hp-stats-bar {
+    padding: var(--space-lg) 0;
+  }
+
+  .hp-stats-inner {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .hp-stat-item-wrap {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .hp-stat-div {
+    display: none;
+  }
+
+  .hp-dest-strip {
+    padding: var(--space-xl) 0;
+  }
+
+  .hp-dest-chips {
+    gap: var(--space-sm);
+  }
+
+  .hp-asia-banner {
+    padding: var(--space-xl) 0;
+  }
+
+  .hp-asia-text h2 {
+    font-size: 1.65rem;
+  }
+
+  .hp-asia-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-dest-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-scenes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-cta-inner > div:first-child h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .prem-card-price {
+    font-size: 1.5rem;
+  }
+
+  .hp-cta-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .hp-cta-actions .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hp-stats-bar {
+    padding: var(--space-lg) 0;
+  }
+
+  .hp-stat-item strong {
+    font-size: 1.25rem;
+  }
+
+  .hp-stat-item span {
+    font-size: 0.8rem;
+  }
+
+  .hp-dest-strip {
+    padding: var(--space-lg) 0;
+  }
+
+  .hp-dest-chips {
+    gap: var(--space-xs);
+  }
+
+  .hp-dest-chip {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hp-chip-flag {
+    font-size: 1rem;
+  }
+
+  .hp-chip-name {
+    font-size: 0.8rem;
+  }
+
+  .hp-chip-sal {
+    font-size: 0.7rem;
+  }
+
+  .hp-asia-banner {
+    padding: var(--space-lg) 0;
+  }
+
+  .hp-asia-text h2 {
+    font-size: 1.35rem;
+  }
+
+  .hp-asia-text p {
+    font-size: 0.95rem;
+  }
+
+  .step-card {
+    padding: var(--space-lg);
+  }
+
+  .step-num {
+    font-size: 2rem;
+  }
+
+  .step-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-card p {
+    font-size: 0.85rem;
+  }
+
+  .prem-card-title {
+    font-size: 1.1rem;
+  }
+
+  .prem-card-price {
+    font-size: 1.35rem;
+  }
+
+  .hp-cta-inner > div:first-child h2 {
+    font-size: 1.25rem;
+  }
+
+  .hp-cta-inner > div:first-child p {
+    font-size: 0.95rem;
+  }
+
+  .button {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,257 @@
+/* ================================================================
+   PATHFINDER COMPONENT
+   Teaching paths section with interactive cards
+   ================================================================ */
+
+.pathfinder {
+  padding: 3rem 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 20%, transparent 80%, rgba(255,255,255,0.5) 100%);
+}
+
+.pathfinder-container {
+  width: min(var(--max-width), calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.pathfinder-header {
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pathfinder-title {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.033em;
+  color: var(--text-strong);
+  margin: 0;
+  max-width: 800px;
+}
+
+/* ─── SECTION BACKGROUND ─── */
+.pathfinder {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(168, 230, 224, 0.15) 100%);
+}
+
+/* ─── GRID LAYOUT ─── */
+.pathfinder-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* ─── CARD STYLES ─── */
+.pathfinder-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--surface-white);
+  border: 2px solid rgba(34, 201, 154, 0.25);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.pathfinder-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(34, 201, 154, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-teal);
+  background: var(--surface-white);
+}
+
+.pathfinder-card:hover .pathfinder-card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* ─── CARD ICON ─── */
+.pathfinder-card-icon-wrapper {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(34, 201, 154, 0.08) 0%, rgba(34, 201, 154, 0.04) 100%);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(34, 201, 154, 0.1);
+  transition: all var(--transition-base);
+}
+
+.pathfinder-card:hover .pathfinder-card-icon-wrapper {
+  background: linear-gradient(135deg, rgba(34, 201, 154, 0.12) 0%, rgba(34, 201, 154, 0.06) 100%);
+  border-color: rgba(34, 201, 154, 0.2);
+}
+
+.pathfinder-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ─── CARD CONTENT ─── */
+.pathfinder-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  text-align: center;
+  align-items: center;
+}
+
+.pathfinder-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--text-strong);
+  margin: 0;
+}
+
+.pathfinder-card-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── TAGS ─── */
+.pathfinder-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  justify-content: center;
+  width: 100%;
+}
+
+.pathfinder-card-tag {
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(34, 201, 154, 0.1);
+  color: var(--primary-teal-dark);
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(34, 201, 154, 0.2);
+  transition: all var(--transition-base);
+}
+
+.pathfinder-card:hover .pathfinder-card-tag {
+  background: var(--primary-teal);
+  color: white;
+  border-color: var(--primary-teal);
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.2);
+}
+
+/* ─── ARROW INDICATOR ─── */
+.pathfinder-card-arrow {
+  position: absolute;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  font-size: 1.5rem;
+  color: var(--primary-teal);
+  opacity: 0;
+  transform: translateX(0);
+  transition: all var(--transition-base);
+  z-index: 2;
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 1400px) {
+  .pathfinder-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .pathfinder-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pathfinder {
+    padding: var(--space-xl) 0;
+  }
+
+  .pathfinder-container {
+    width: calc(100% - 1.5rem);
+  }
+
+  .pathfinder-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .pathfinder-title {
+    font-size: 1.65rem;
+  }
+
+  .pathfinder-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .pathfinder-card {
+    padding: var(--space-lg);
+  }
+
+  .pathfinder-card-icon-wrapper {
+    height: 140px;
+  }
+
+  .pathfinder-card-title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pathfinder {
+    padding: var(--space-lg) 0;
+  }
+
+  .pathfinder-container {
+    width: calc(100% - 1rem);
+  }
+
+  .pathfinder-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .pathfinder-title {
+    font-size: 1.35rem;
+  }
+
+  .pathfinder-card {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .pathfinder-card-title {
+    font-size: 1.05rem;
+  }
+
+  .pathfinder-card-description {
+    font-size: 0.85rem;
+  }
+
+  .pathfinder-card-icon-wrapper {
+    height: 120px;
+  }
+
+  .pathfinder-card-tag {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+}

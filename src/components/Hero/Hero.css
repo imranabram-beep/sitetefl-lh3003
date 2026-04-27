@@ -1,0 +1,284 @@
+/* ================================================================
+   HERO COMPONENT - PREMIUM
+   Full-width hero with background image, dark overlay, and dual CTAs
+   ================================================================ */
+
+.hero {
+  position: relative;
+  min-height: 750px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+  height: 250px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.8) 70%, #ffffff 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ─── BACKGROUND & OVERLAY ─── */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center 20%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  z-index: 0;
+  transition: background-image 0.8s ease-in-out;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(15, 47, 47, 0.35), rgba(15, 118, 110, 0.25));
+  z-index: 1;
+}
+
+/* ─── WRAPPER ─── */
+.hero-wrapper {
+  position: relative;
+  z-index: 2;
+  width: min(var(--max-width), calc(100% - 2.5rem));
+  margin: 0;
+  padding-left: 0;
+}
+
+/* ─── GLASS-MORPHISM CARD ─── */
+.hero-glass-card {
+  max-width: 600px;
+  height: 540px;
+  overflow: hidden;
+  padding: 2.5rem;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.15);
+  margin-left: 0;
+}
+
+/* ─── CONTENT ─── */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  text-align: left;
+  max-width: 900px;
+  margin: 0;
+}
+
+/* ─── LOCATION LABEL ─── */
+.hero-location {
+  display: none;
+}
+
+.hero-location-dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(212, 155, 140, 0.7);
+  border-radius: 50%;
+}
+
+.hero-location-text {
+  display: inline;
+}
+
+.hero-title {
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: -0.033em;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* ─── CTA BUTTONS ─── */
+.hero-ctas {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.hero-cta--primary {
+  background: linear-gradient(135deg, #17a697 0%, #0f766e 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.15);
+}
+
+.hero-cta--primary:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #0d5c5c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 201, 154, 0.25);
+}
+
+.hero-cta--secondary {
+  display: none;
+}
+
+.hero-cta--secondary:hover {
+  display: none;
+}
+
+/* ─── STATS ─── */
+.hero-stats {
+  display: flex;
+  gap: var(--space-2xl);
+  justify-content: flex-start;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  flex-wrap: wrap;
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.hero-stat strong {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--secondary-gold);
+}
+
+.hero-stat span {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 1200px) {
+  .hero {
+    min-height: 650px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 550px;
+    padding: var(--space-xl) 0;
+    justify-content: center;
+  }
+
+  .hero-wrapper {
+    width: calc(100% - 1.5rem);
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-ctas {
+    gap: var(--space-sm);
+  }
+
+  .hero-cta {
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-stats {
+    gap: var(--space-lg);
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 500px;
+    justify-content: center;
+  }
+
+  .hero-wrapper {
+    width: calc(100% - 1.5rem);
+  }
+
+  .hero-glass-card {
+    max-width: none;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-location {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .hero-cta {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-stats {
+    gap: var(--space-md);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

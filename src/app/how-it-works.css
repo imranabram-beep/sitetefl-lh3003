@@ -1,0 +1,74 @@
+/* ================================================================
+   HOW IT WORKS PAGE STYLES
+   ================================================================ */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: white;
+  border: 1px solid rgba(34, 201, 154, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  border-color: #00b09b;
+  box-shadow: 0 8px 24px rgba(34, 201, 154, 0.1);
+  transform: translateY(-4px);
+}
+
+.step-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fd9000;
+  line-height: 1;
+}
+
+.step-content h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #223548;
+  margin: 0 0 0.5rem 0;
+}
+
+.step-content p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #5a6b7a;
+  margin: 0;
+}
+
+.step-details {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.step-details li {
+  font-size: 0.9rem;
+  color: #5a6b7a;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.step-details li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #00b09b;
+  font-weight: 700;
+  font-size: 0.95rem;
+}

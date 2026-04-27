@@ -1,0 +1,347 @@
+/* ================================================================
+   GLOBALS — BASE STYLES ONLY
+   Imports design system and defines base layout
+   Component-specific styles are in component CSS files
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@import '../lib/styles/tokens.css';
+@import '../lib/styles/typography.css';
+@import '../lib/styles/utilities.css';
+@import './button.css';
+@import './home.css';
+@import './footer.css';
+@import './course-detail.css';
+@import './blog.css';
+@import '../components/trust-section.css';
+@import '../components/dream-section.css';
+
+/* ================================================================
+   BASE STYLES
+   ================================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-light);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'kern' 1;
+  border: 2px solid rgba(34, 201, 154, 0.2);
+}
+
+/* ─── IMAGES & MEDIA ─── */
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+picture {
+  display: block;
+}
+
+/* ─── SEMANTIC SECTIONS ─── */
+main {
+  min-height: 70vh;
+}
+
+section {
+  position: relative;
+}
+
+/* ─── LAYOUT CONTAINERS ─── */
+.container {
+  width: min(var(--max-width), calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.container-narrow {
+  width: min(var(--max-width-narrow), calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+.section.alt {
+  background: var(--surface-white);
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+}
+
+/* ─── FORM RESET ─── */
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button, a {
+  color: inherit;
+}
+
+/* ─── COMMON COMPONENTS ─── */
+button {
+  cursor: pointer;
+  border: none;
+}
+
+/* ─── LIST RESETS ─── */
+ul {
+  list-style: none;
+}
+
+/* ─── RESPONSIVE HELPERS ─── */
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 1.5rem);
+  }
+
+  .section {
+    padding: var(--space-xl) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: var(--space-lg) 0;
+  }
+}
+
+/* ================================================================
+   ANIMATION & TRANSITION UTILITIES
+   ================================================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(23, 166, 151, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(23, 166, 151, 0.6);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: perspective(400px) rotateY(0);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-base);
+}
+
+.slide-up {
+  animation: slideUp var(--transition-base);
+}
+
+.slide-down {
+  animation: slideDown var(--transition-base);
+}
+
+.slide-in-left {
+  animation: slideInLeft var(--transition-base);
+}
+
+.slide-in-right {
+  animation: slideInRight var(--transition-base);
+}
+
+.scale-up {
+  animation: scaleUp var(--transition-base);
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.bounce {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+.shimmer {
+  animation: shimmer 2s infinite;
+}
+
+.flip {
+  animation: flip 0.6s ease-in-out;
+}
+
+.heartbeat {
+  animation: heartbeat 1.3s ease-in-out infinite;
+}
+
+/* ================================================================
+   SCROLLBAR STYLING (OPTIONAL)
+   ================================================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-teal);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-teal-dark);
+}
+
+/* ================================================================
+   PRINT STYLES
+   ================================================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  button {
+    display: none;
+  }
+}

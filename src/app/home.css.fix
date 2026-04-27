@@ -1,0 +1,7 @@
+/* ─── COURSE CARDS GRID - WITH REDUCED SPACING ─── */
+.course-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: -1.5rem;
+}

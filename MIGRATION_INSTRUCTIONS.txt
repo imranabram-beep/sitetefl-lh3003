@@ -1,0 +1,23 @@
+PRISMA DATABASE MIGRATION STEPS
+================================
+
+The DATABASE_URL in .env.local has been fixed (removed duplicate "postgresql://")
+
+To complete the database setup, run this command in your VS Code terminal:
+
+bash run-migration.sh
+
+OR manually run:
+
+export DATABASE_URL="postgresql://postgres.dncafcfsyutrwcniyebw:MariyamAsiyaImranPatel@aws-0-eu-west-1.pooler.supabase.com:5432/postgres" && npx prisma db push --skip-generate
+
+This will:
+1. Connect to your Supabase PostgreSQL database
+2. Create all tables defined in prisma/schema.prisma (sb_schools, sb_campaigns, etc.)
+3. Prepare Prisma client for your app
+
+After the migration completes successfully, you can seed test data by running:
+
+psql "postgresql://postgres.dncafcfsyutrwcniyebw:MariyamAsiyaImranPatel@aws-0-eu-west-1.pooler.supabase.com:5432/postgres" < scripts/seed-schoolbase.sql
+
+Or use the Supabase SQL editor to paste the contents of scripts/seed-schoolbase.sql

@@ -1,0 +1,271 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ============================================================================
+// ADMIN PANEL MODELS (Email Campaigns)
+// ============================================================================
+
+model Contact {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  type         String   // "school", "academy", "teacher"
+  country      String?
+  website      String?
+  phone        String?
+  notes        String?
+  tags         String[] @default([]) // JSON array stored as text
+  unsubscribed Boolean  @default(false)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  campaigns    CampaignRecipient[]
+
+  @@index([email])
+  @@index([type])
+  @@index([country])
+  @@map("contacts")
+}
+
+model EmailTemplate {
+  id        String   @id @default(cuid())
+  name      String
+  subject   String
+  body      String?
+  htmlBody  String?  @map("html_body")
+  variables String[] @default([]) // extracted {{variable}} names
+  createdBy String?  @map("created_by")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  campaigns EmailCampaign[]
+
+  @@index([name])
+  @@map("email_templates")
+}
+
+model EmailCampaign {
+  id             String   @id @default(cuid())
+  name           String
+  subject        String
+  body           String?
+  htmlBody       String?  @map("html_body")
+  templateId     String?  @map("template_id")
+  status         String   @default("draft") // draft, scheduled, sending, completed
+  sentCount      Int      @default(0) @map("sent_count")
+  openedCount    Int      @default(0) @map("opened_count")
+  clickedCount   Int      @default(0) @map("clicked_count")
+  bouncedCount   Int      @default(0) @map("bounced_count")
+  recipientCount Int      @default(0) @map("recipient_count")
+  createdBy      String?  @map("created_by")
+  scheduledAt    DateTime? @map("scheduled_at")
+  startedAt      DateTime? @map("started_at")
+  completedAt    DateTime? @map("completed_at")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  template       EmailTemplate? @relation(fields: [templateId], references: [id])
+  recipients     CampaignRecipient[]
+
+  @@index([status])
+  @@index([templateId])
+  @@map("email_campaigns")
+}
+
+model CampaignRecipient {
+  id         String   @id @default(cuid())
+  campaignId String   @map("campaign_id")
+  contactId  String   @map("contact_id")
+  status     String   @default("pending") // pending, sent, opened, clicked, bounced
+  sentAt     DateTime? @map("sent_at")
+  openedAt   DateTime? @map("opened_at")
+  clickedAt  DateTime? @map("last_click_at")
+  bouncedAt  DateTime? @map("bounced_at")
+  responseNotes String? @map("response_notes")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  // Relations
+  campaign   EmailCampaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  contact    Contact       @relation(fields: [contactId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, contactId])
+  @@index([campaignId])
+  @@index([contactId])
+  @@index([status])
+  @@map("campaign_recipients")
+}
+
+// ============================================================================
+// SCHOOLBASE MODELS (School Discovery & Lead Generation)
+// ============================================================================
+
+model SbLocation {
+  id          String   @id @default(cuid())
+  name        String
+  type        String   // "continent", "country", "region", "city", "town", "village"
+  parentId    String?
+  latitude    Float?
+  longitude   Float?
+  geonamesId  String?  @unique
+  wikidataId  String?
+  osmId       String?
+  schoolCount Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  parent      SbLocation?  @relation("LocationHierarchy", fields: [parentId], references: [id])
+  children    SbLocation[] @relation("LocationHierarchy")
+  schools     SbSchool[]
+
+  @@index([type])
+  @@index([parentId])
+  @@index([geonamesId])
+}
+
+model SbSchool {
+  id          String   @id @default(cuid())
+  name        String
+  type        String   // "school", "university", "college", "academy", "institute"
+  locationId  String?
+  email       String?
+  phone       String?
+  website     String?
+  leadScore   Int      @default(0) // 0-100 quality score
+  verified    Boolean  @default(false)
+  notes       String?
+  osmId       String?  @unique
+  wikidataId  String?
+  searchId    String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  location    SbLocation?      @relation(fields: [locationId], references: [id])
+  sources     SbSource[]
+  verification SbVerification?
+  campaignRecipients SbCampaignRecipient[]
+
+  @@index([email])
+  @@index([verified])
+  @@index([leadScore])
+  @@index([locationId])
+  @@index([osmId])
+}
+
+model SbSource {
+  id        String   @id @default(cuid())
+  schoolId  String
+  source    String   // "overpass", "wikidata", "web_scrape", "manual", "import"
+  url       String?
+  method    String?  // how the data was extracted
+  createdAt DateTime @default(now())
+
+  // Relations
+  school    SbSchool @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+
+  @@index([schoolId])
+  @@index([source])
+}
+
+model SbVerification {
+  id               String   @id @default(cuid())
+  schoolId         String   @unique
+  emailAddress     String
+  phoneNumber      String?
+  website          String?
+  emailStatus      String   @default("pending") // pending, verified, invalid, bounced
+  phoneStatus      String   @default("pending") // pending, verified, invalid
+  websiteStatus    String   @default("pending") // pending, verified, invalid
+  lastCheckedAt    DateTime?
+  verificationNotes String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Relations
+  school           SbSchool @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+
+  @@index([schoolId])
+  @@index([emailStatus])
+}
+
+model SbCampaign {
+  id            String   @id @default(cuid())
+  name          String
+  subject       String
+  body          String?  // HTML email template
+  status        String   @default("draft") // draft, scheduled, sending, completed
+  emailsSent    Int      @default(0)
+  emailsOpened  Int      @default(0)
+  emailsClicked Int      @default(0)
+  emailsBounced Int      @default(0)
+  scheduledAt   DateTime?
+  sentAt        DateTime?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  recipients    SbCampaignRecipient[]
+
+  @@index([status])
+}
+
+model SbCampaignRecipient {
+  id         String   @id @default(cuid())
+  campaignId String
+  schoolId   String
+  status     String   @default("pending") // pending, sent, opened, clicked, bounced
+  sentAt     DateTime?
+  openedAt   DateTime?
+  clickedAt  DateTime?
+  createdAt  DateTime @default(now())
+
+  // Relations
+  campaign   SbCampaign @relation(fields: [campaignId], references: [id], onDelete: Cascade)
+  school     SbSchool   @relation(fields: [schoolId], references: [id], onDelete: Cascade)
+
+  @@unique([campaignId, schoolId])
+  @@index([campaignId])
+  @@index([schoolId])
+  @@index([status])
+}
+
+model SbSearchResult {
+  id            String   @id @default(cuid())
+  country       String
+  region        String?
+  city          String
+  schoolType    String?
+  searchParams  String?  // JSON stringified search params
+  resultsCount  Int      @default(0)
+  createdAt     DateTime @default(now())
+
+  @@index([country])
+  @@index([city])
+}
+
+model SbSettings {
+  id                        String   @id @default(cuid())
+  geonamesUsername          String   @default("")
+  enableOverpassAPI         Boolean  @default(true)
+  overpassAPIUrl            String   @default("https://overpass-api.de/api/interpreter")
+  maxSearchRadius           Int      @default(50)
+  emailVerificationService  String   @default("smtp") // smtp, clearout, zerobounce, mailgun
+  enableWebScraping         Boolean  @default(true)
+  scrapingRateLimit         Float    @default(0.5)
+  verificationBatchSize     Int      @default(50)
+  lastSyncDate              DateTime?
+  createdAt                 DateTime @default(now())
+  updatedAt                 DateTime @updatedAt
+}

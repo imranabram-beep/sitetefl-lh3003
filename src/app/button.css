@@ -1,0 +1,336 @@
+/* ================================================================
+   BUTTON STYLES — SOFT SHADOW + MICRO-INTERACTIONS
+   Trending 2025 design: Soft shadows, smooth transitions, ripple effects
+   ================================================================ */
+
+/* ─── RIPPLE ANIMATION FOR CLICK FEEDBACK ─── */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes buttonScale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shadowPulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(34, 201, 154, 0.15);
+  }
+  100% {
+    box-shadow: 0 8px 20px rgba(34, 201, 154, 0.25);
+  }
+}
+
+/* ─── BASE BUTTON STYLES ─── */
+button,
+.button,
+a.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  overflow: hidden;
+  font-family: inherit;
+}
+
+/* ─── PRIMARY BUTTON (Teal) ─── */
+.button,
+a.button {
+  background: linear-gradient(135deg, #17a697 0%, #0f766e 100%);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.15);
+}
+
+.button:hover,
+a.button:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #0d5c5c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 201, 154, 0.25);
+}
+
+.button:active,
+a.button:active {
+  animation: buttonScale 0.2s ease-out;
+  box-shadow: 0 2px 8px rgba(34, 201, 154, 0.15);
+}
+
+/* ─── SECONDARY BUTTON (Ghost/Outline) ─── */
+.button.ghost,
+a.button.ghost {
+  background: white;
+  color: var(--primary-teal);
+  border: 2px solid var(--primary-teal);
+  box-shadow: 0 2px 6px rgba(34, 201, 154, 0.08);
+}
+
+.button.ghost:hover,
+a.button.ghost:hover {
+  background: rgba(34, 201, 154, 0.08);
+  border-color: var(--primary-teal-dark);
+  color: var(--primary-teal-dark);
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.15);
+  transform: translateY(-2px);
+}
+
+.button.ghost:active,
+a.button.ghost:active {
+  animation: buttonScale 0.2s ease-out;
+  box-shadow: 0 2px 6px rgba(34, 201, 154, 0.1);
+}
+
+/* ─── GOLD/CTA BUTTON ─── */
+.hp-btn-gold,
+.button.gold,
+a.hp-btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--secondary-gold-muted);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(212, 150, 77, 0.2);
+}
+
+.hp-btn-gold:hover,
+.button.gold:hover,
+a.hp-btn-gold:hover {
+  background: var(--secondary-gold-muted-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 150, 77, 0.3);
+}
+
+.hp-btn-gold:active,
+.button.gold:active,
+a.hp-btn-gold:active {
+  animation: buttonScale 0.2s ease-out;
+  box-shadow: 0 2px 8px rgba(212, 150, 77, 0.15);
+}
+
+/* ─── HEADER PRIMARY BUTTON (Teal - for "Enrol now" in nav) ─── */
+.hp-btn-teal-nav,
+a.hp-btn-teal-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #17a697 0%, #0f766e 100%);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.15);
+}
+
+.hp-btn-teal-nav:hover,
+a.hp-btn-teal-nav:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #0d5c5c 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 201, 154, 0.25);
+}
+
+.hp-btn-teal-nav:active,
+a.hp-btn-teal-nav:active {
+  animation: buttonScale 0.2s ease-out;
+  box-shadow: 0 2px 8px rgba(34, 201, 154, 0.15);
+}
+
+/* ─── NAVIGATION BUTTONS (Header) ─── */
+.hp-btn-ghost-nav,
+button.ghost.hp-btn-ghost-nav {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid rgba(34, 201, 154, 0.2);
+  border-radius: 8px;
+  box-shadow: none;
+  transition: all var(--transition-fast);
+}
+
+.hp-btn-ghost-nav:hover,
+button.ghost.hp-btn-ghost-nav:hover {
+  background: rgba(34, 201, 154, 0.08);
+  border-color: var(--primary-teal);
+  color: var(--primary-teal-dark);
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.12);
+}
+
+.hp-btn-ghost-nav:active,
+button.ghost.hp-btn-ghost-nav:active {
+  animation: buttonScale 0.15s ease-out;
+}
+
+/* ─── DISABLED STATE ─── */
+button:disabled,
+.button:disabled,
+a.button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+button:disabled:hover,
+.button:disabled:hover,
+a.button.disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ─── SMALL BUTTON VARIANT ─── */
+.button.small,
+button.small,
+a.button.small {
+  padding: 0.65rem 1.25rem;
+  font-size: 0.85rem;
+  border-radius: 8px;
+}
+
+/* ─── LARGE BUTTON VARIANT ─── */
+.button.large,
+button.large,
+a.button.large {
+  padding: 1.25rem 3rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+}
+
+/* ─── FULL WIDTH BUTTON ─── */
+.button.full,
+button.full,
+a.button.full {
+  width: 100%;
+}
+
+/* ─── FORM BUTTONS ─── */
+form button[type="submit"],
+form button[type="button"],
+form button.submit {
+  padding: 0.85rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #17a697 0%, #0f766e 100%);
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(34, 201, 154, 0.15);
+}
+
+form button[type="submit"]:hover,
+form button[type="button"]:hover,
+form button.submit:hover {
+  background: linear-gradient(135deg, #0f766e 0%, #0d5c5c 100%);
+  box-shadow: 0 8px 20px rgba(34, 201, 154, 0.25);
+  transform: translateY(-2px);
+}
+
+form button[type="submit"]:active,
+form button[type="button"]:active,
+form button.submit:active {
+  animation: buttonScale 0.2s ease-out;
+}
+
+/* ─── LOADING STATE ─── */
+.button.loading,
+button.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.button.loading::after,
+button.loading::after {
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 768px) {
+  .button,
+  a.button {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.9rem;
+  }
+
+  .hp-btn-gold,
+  a.hp-btn-gold {
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .button.large,
+  a.button.large {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .button,
+  a.button,
+  form button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .hp-btn-gold,
+  a.hp-btn-gold {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .button.large,
+  a.button.large {
+    padding: 0.9rem 2rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,81 @@
+/* ================================================================
+   DESIGN TOKENS — TEFL SEA ACADEMY
+   Centralized design system with clear semantic naming
+   ================================================================ */
+
+:root {
+  /* ─── COLOR PALETTE — PRIMARY (TEAL) ─── */
+  --primary-teal: #9aecdb;
+  --primary-teal-dark: #17a697;
+  --primary-teal-mid: #a8e6e0;
+  --primary-teal-light: #c8f7f0;
+  --primary-teal-lighter: #d4eff5;
+
+  /* ─── COLOR PALETTE — SECONDARY (GOLD) ─── */
+  --secondary-gold: #fd9000;
+  --secondary-gold-dark: #d67c00;
+  --secondary-gold-mid: #ffb84d;
+  --secondary-gold-light: #ffe8cc;
+  --secondary-gold-muted: #d4964d;
+  --secondary-gold-muted-dark: #b8813e;
+
+  /* ─── TEXT & SURFACE ─── */
+  --text-primary: #1a1a1a;
+  --text-strong: #1a1a1a;
+  --text-muted: #999999;
+  --surface-white: #ffffff;
+  --surface-light: #f8fefb;
+  --surface-lighter: #f0f8fa;
+  --surface-dark: #1a1a1a;
+
+  /* ─── BACKGROUND ─── */
+  --bg-light: #d4eff5;
+  --bg-teal-main: linear-gradient(135deg, #0f2f2f 0%, #0c3b3b 25%, #0a4a4a 50%, #0d5c5c 75%, #0f766e 100%);
+  --bg-teal-soft: linear-gradient(135deg, #103838 0%, #0d4b4b 45%, #0f766e 100%);
+
+  /* ─── FEEDBACK COLORS ─── */
+  --success: #22c99a;
+  --success-soft: #d4eff5;
+  --danger: #e05050;
+  --danger-soft: #fdeaea;
+  --info-soft: #d4eff5;
+
+  /* ─── BORDERS & LINES ─── */
+  --line: #e0e0e0;
+  --line-strong: #d0d0d0;
+
+  /* ─── SHADOWS ─── */
+  --shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.06);
+
+  /* ─── BORDER RADIUS ─── */
+  --radius: 20px;
+  --radius-md: 16px;
+  --radius-sm: 14px;
+  --radius-xs: 10px;
+
+  /* ─── SPACING SCALE (Base: 8px) ─── */
+  --space-xs: 0.5rem;   /* 4px — micro spacing */
+  --space-sm: 1rem;     /* 8px — small gaps */
+  --space-md: 1.5rem;   /* 12px — standard gaps */
+  --space-lg: 2rem;     /* 16px — section padding */
+  --space-xl: 3rem;     /* 24px — major sections */
+  --space-2xl: 4rem;    /* 32px — hero-sized gaps */
+
+  /* ─── LAYOUT ─── */
+  --max-width: 1140px;
+  --max-width-narrow: 760px;
+
+  /* ─── TRANSITIONS ─── */
+  --transition-fast: 0.15s ease-out;
+  --transition-base: 0.3s ease-out;
+  --transition-slow: 0.5s ease-out;
+
+  /* ─── Z-INDEX SCALE ─── */
+  --z-dropdown: 100;
+  --z-sticky: 50;
+  --z-overlay: 1000;
+  --z-modal: 1100;
+}

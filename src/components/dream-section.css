@@ -1,0 +1,501 @@
+/* ================================================================
+   DREAM SECTION — DESTINATIONS & LIFESTYLE
+   Income opportunities and lifestyle benefits per country
+   ================================================================ */
+
+.dream-section {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 20%, transparent 80%, rgba(255,255,255,0.5) 100%);
+  position: relative;
+}
+
+.dream-orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.dream-orb--1 {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(34, 201, 154, 0.15), transparent);
+  top: 5%;
+  right: 8%;
+}
+
+.dream-orb--2 {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(212, 239, 245, 0.3), transparent);
+  bottom: 10%;
+  left: 5%;
+}
+
+.dream-orb--3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(34, 201, 154, 0.1), transparent);
+  top: 40%;
+  right: 2%;
+}
+
+.dream-container {
+  width: min(var(--max-width), calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+/* ─── HEADER ─── */
+.dream-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.dream-header-left {
+  text-align: left;
+}
+
+.hp-eyebrow-teal {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary-teal-dark);
+  margin: 0 0 var(--space-md) 0;
+  display: block;
+}
+
+.dream-headline {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.033em;
+  color: var(--text-strong);
+  margin: 0;
+}
+
+.dream-headline-em {
+  background: linear-gradient(135deg, rgba(212, 155, 140, 0.2) 0%, rgba(212, 155, 140, 0.1) 100%);
+  padding: 0.2rem 0.8rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.dream-header-right {
+  text-align: left;
+}
+
+.dream-intro {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-md) 0;
+}
+
+.dream-explore-link {
+  color: var(--primary-teal-dark);
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all var(--transition-base);
+}
+
+.dream-explore-link:hover {
+  color: var(--primary-teal);
+  transform: translateX(2px);
+}
+
+/* ─── LOCATION CARDS ─── */
+.dream-locations {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.dream-loc-card {
+  position: relative;
+  height: 320px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: 2px solid rgba(34, 201, 154, 0.25);
+}
+
+.dream-loc-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(34, 201, 154, 0.2);
+}
+
+.dream-loc-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform var(--transition-base);
+}
+
+.dream-loc-card:hover .dream-loc-img {
+  transform: scale(1.08);
+}
+
+.dream-loc-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 2;
+}
+
+.dream-loc-overlay-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.dream-loc-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-lg);
+  color: white;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.dream-loc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.dream-loc-flag {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.dream-loc-demand {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.dc-demand {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.dvh {
+  background: rgba(34, 201, 154, 0.3);
+  border-color: rgba(34, 201, 154, 0.6);
+}
+
+.dh {
+  background: rgba(34, 201, 154, 0.2);
+  border-color: rgba(34, 201, 154, 0.5);
+}
+
+.dream-loc-place {
+  margin: 0;
+}
+
+.dream-loc-country {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.2rem 0;
+  line-height: 1;
+}
+
+.dream-loc-city {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+}
+
+.dream-loc-salary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+
+.dream-loc-salary-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+}
+
+.dream-loc-salary-period {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.dream-loc-vibe {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ─── LIFESTYLE PILLARS ─── */
+.dream-pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  padding: var(--space-xl);
+  background: white;
+  border-radius: var(--radius);
+  border: 1px solid rgba(34, 201, 154, 0.1);
+  margin-bottom: var(--space-2xl);
+}
+
+.dream-pillar {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.dream-pillar-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  display: block;
+}
+
+.dream-pillar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  margin: 0;
+}
+
+.dream-pillar-body {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ─── QUOTE SECTION ─── */
+.dream-quote {
+  text-align: center;
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  background: rgba(212, 239, 245, 0.2);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--primary-teal);
+}
+
+.dream-quote-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.8;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.dream-quote-attr {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: normal;
+  display: block;
+}
+
+.dream-quote-flag {
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+/* ─── CTA SECTION ─── */
+.dream-cta {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.dream-dest-btn {
+  background: white;
+  color: var(--text-strong);
+  border: 2px solid var(--primary-teal);
+  transition: all var(--transition-base);
+}
+
+.dream-dest-btn:hover {
+  background: var(--primary-teal);
+  color: white;
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 1024px) {
+  .dream-header {
+    grid-template-columns: 1fr;
+  }
+
+  .dream-locations {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dream-pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dream-headline {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dream-section {
+    padding: var(--space-xl) 0;
+  }
+
+  .dream-container {
+    width: calc(100% - 1.5rem);
+  }
+
+  .dream-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .dream-headline {
+    font-size: 1.65rem;
+  }
+
+  .dream-locations {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .dream-loc-card {
+    height: 280px;
+  }
+
+  .dream-pillars {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .dream-pillar-icon {
+    font-size: 2rem;
+  }
+
+  .dream-quote {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .dream-quote-text {
+    font-size: 1rem;
+  }
+
+  .dream-cta {
+    gap: var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .dream-section {
+    padding: var(--space-lg) 0;
+  }
+
+  .dream-container {
+    width: calc(100% - 1rem);
+  }
+
+  .dream-headline {
+    font-size: 1.35rem;
+  }
+
+  .dream-intro {
+    font-size: 0.9rem;
+  }
+
+  .dream-locations {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .dream-loc-card {
+    height: 240px;
+  }
+
+  .dream-loc-country {
+    font-size: 1.25rem;
+  }
+
+  .dream-loc-salary-value {
+    font-size: 1.2rem;
+  }
+
+  .dream-pillars {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .dream-pillar-icon {
+    font-size: 1.75rem;
+  }
+
+  .dream-pillar-title {
+    font-size: 0.95rem;
+  }
+
+  .dream-pillar-body {
+    font-size: 0.85rem;
+  }
+
+  .dream-quote {
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .dream-quote-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .dream-cta {
+    flex-direction: column;
+  }
+
+  .dream-cta .button {
+    width: 100%;
+  }
+
+  .dream-dest-btn {
+    width: 100%;
+  }
+}

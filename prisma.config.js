@@ -1,0 +1,7 @@
+module.exports = {
+  datasources: {
+    db: {
+      url: "postgresql://postgres.dncafcfsyutrwcniyebw:MariyamAsiyaImranPatel@aws-0-eu-west-1.pooler.supabase.com:5432/postgres",
+    },
+  },
+};

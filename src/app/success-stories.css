@@ -1,0 +1,46 @@
+/* ================================================================
+   SUCCESS STORIES PAGE STYLES
+   ================================================================ */
+
+.hp-scenes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.hp-scene-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  min-height: 280px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hp-scene-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.hp-scene-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 1024px) {
+  .hp-scenes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hp-scenes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hp-scene-card {
+    min-height: 220px;
+  }
+}

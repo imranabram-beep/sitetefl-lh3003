@@ -1,0 +1,374 @@
+/* ================================================================
+   SUCCESS STORIES COMPONENT
+   Carousel of graduate testimonials with auto-rotation
+   ================================================================ */
+
+.success-stories {
+  padding: var(--space-2xl) 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, transparent 20%, transparent 80%, rgba(255,255,255,0.5) 100%);
+}
+
+.success-stories-container {
+  width: min(1000px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+/* ─── HEADER ─── */
+.success-stories-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success-stories-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.033em;
+  color: var(--text-strong);
+  margin: 0 0 var(--space-sm) 0;
+  max-width: 800px;
+}
+
+.success-stories-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ─── CAROUSEL WRAPPER ─── */
+.success-stories-carousel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  position: relative;
+  margin-bottom: var(--space-xl);
+}
+
+/* ─── CAROUSEL CONTAINER ─── */
+.success-stories-carousel {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+}
+
+/* ─── STORY CARD ─── */
+.success-stories-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--space-xl);
+  padding: var(--space-xl);
+  background: var(--surface-white);
+  border-radius: var(--radius);
+  border: 2px solid rgba(34, 201, 154, 0.15);
+  border-left: 5px solid var(--primary-teal);
+  transition: all var(--transition-base) ease-in-out;
+  z-index: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.success-stories-card.active {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 24px rgba(34, 201, 154, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-color: rgba(34, 201, 154, 0.25);
+}
+
+/* ─── CARD IMAGE ─── */
+.success-stories-card-image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(34, 201, 154, 0.1) 0%, rgba(34, 201, 154, 0.04) 100%);
+  border-radius: var(--radius-sm);
+  min-height: 320px;
+  border: 1px solid rgba(34, 201, 154, 0.12);
+  overflow: hidden;
+  position: relative;
+}
+
+.success-stories-card-image-content {
+  font-size: 4rem;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ─── CARD CONTENT ─── */
+.success-stories-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.success-stories-card-course {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary-teal-dark);
+  background: rgba(34, 201, 154, 0.08);
+  border: 1px solid rgba(34, 201, 154, 0.15);
+  border-radius: var(--radius-xs);
+  width: fit-content;
+}
+
+.success-stories-card-outcome {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--secondary-gold);
+}
+
+.success-stories-card-quote {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+  border-left: 4px solid var(--primary-teal);
+  padding-left: var(--space-lg);
+  margin: var(--space-md) 0;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* ─── AUTHOR INFO ─── */
+.success-stories-card-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.95rem;
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(34, 201, 154, 0.08);
+}
+
+.success-stories-card-author strong {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.success-stories-card-author span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* ─── NAVIGATION BUTTONS ─── */
+.success-stories-nav {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-white);
+  border: 1.5px solid rgba(34, 201, 154, 0.2);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary-teal-dark);
+  transition: all var(--transition-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.success-stories-nav:hover {
+  background: linear-gradient(135deg, #17a697 0%, #0f766e 100%);
+  color: white;
+  border-color: #0f766e;
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(34, 201, 154, 0.2);
+}
+
+.success-stories-nav:active {
+  transform: scale(0.95);
+}
+
+.success-stories-nav--prev {
+  order: -1;
+}
+
+/* ─── INDICATORS ─── */
+.success-stories-indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.success-stories-indicator {
+  width: 12px;
+  height: 12px;
+  background: var(--line);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.success-stories-indicator:hover {
+  background: var(--primary-teal-light);
+  transform: scale(1.1);
+}
+
+.success-stories-indicator.active {
+  background: var(--primary-teal);
+  transform: scale(1.3);
+}
+
+/* ─── RESPONSIVE DESIGN ─── */
+@media (max-width: 1024px) {
+  .success-stories-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: var(--space-lg);
+  }
+
+  .success-stories-card-image-placeholder {
+    min-height: 280px;
+  }
+
+  .success-stories-card-quote {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .success-stories {
+    padding: var(--space-xl) 0;
+  }
+
+  .success-stories-container {
+    width: calc(100% - 1.5rem);
+  }
+
+  .success-stories-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .success-stories-carousel-wrapper {
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .success-stories-carousel {
+    min-height: 400px;
+  }
+
+  .success-stories-card {
+    padding: var(--space-lg);
+    gap: var(--space-lg);
+  }
+
+  .success-stories-title {
+    font-size: 1.65rem;
+  }
+
+  .success-stories-card-outcome {
+    font-size: 1.2rem;
+  }
+
+  .success-stories-card-quote {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .success-stories-card-image-placeholder {
+    min-height: 240px;
+  }
+
+  .success-stories-nav {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .success-stories {
+    padding: var(--space-lg) 0;
+  }
+
+  .success-stories-container {
+    width: calc(100% - 1rem);
+  }
+
+  .success-stories-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .success-stories-title {
+    font-size: 1.35rem;
+  }
+
+  .success-stories-carousel-wrapper {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .success-stories-carousel {
+    min-height: 350px;
+  }
+
+  .success-stories-card {
+    grid-template-columns: 1fr;
+    min-height: 100%;
+    padding: var(--space-md);
+    gap: var(--space-md);
+  }
+
+  .success-stories-card-image-placeholder {
+    min-height: 180px;
+  }
+
+  .success-stories-card-image-content {
+    font-size: 3rem;
+  }
+
+  .success-stories-card-outcome {
+    font-size: 1.05rem;
+  }
+
+  .success-stories-card-quote {
+    font-size: 0.9rem;
+    padding-left: var(--space-md);
+    line-height: 1.6;
+  }
+
+  .success-stories-card-author {
+    gap: 0.25rem;
+  }
+
+  .success-stories-card-author strong {
+    font-size: 0.95rem;
+  }
+
+  .success-stories-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .success-stories-indicator {
+    width: 10px;
+    height: 10px;
+  }
+}
