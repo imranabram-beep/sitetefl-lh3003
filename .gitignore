@@ -4,3 +4,6 @@ node_modules/
 *.zip
 .env.local
 .env.*.local
+.vercel
+*lock.json
+*lock.yaml
