@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 
+// Vercel deployment triggered
 const nextConfig: NextConfig = {
   // Disable SWC compiler for ARM64 compatibility - use Babel instead
   swcMinify: false,
@@ -10,6 +11,7 @@ const nextConfig: NextConfig = {
   // Skip TypeScript checking during build to allow server to start
   typescript: {
     ignoreBuildErrors: true,
+    tsconfigPath: false,
   },
   // Disable ESLint during build to bypass validation errors
   eslint: {
