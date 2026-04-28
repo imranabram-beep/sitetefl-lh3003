@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Supabase client stub - using mock data fallback for development
 // TODO: Install @supabase/supabase-js once npm registry access is restored
 

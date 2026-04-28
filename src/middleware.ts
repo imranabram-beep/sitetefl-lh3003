@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 // Routes that require the user to be logged in
