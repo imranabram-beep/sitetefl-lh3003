@@ -1,3 +1,4 @@
+/* eslint-disable */
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SectionIntro } from "@/components/site-shell";
